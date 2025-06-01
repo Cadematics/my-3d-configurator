@@ -8,7 +8,9 @@ import ModelSelector from './components/ModelSelector';
 function App() {
   return (
     <>
-      <ModelSelector />
+      <div className="ui-overlay">
+        <ModelSelector />
+      </div>
       <Canvas camera={{ position: [0, 1, 3], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[5, 5, 5]} intensity={1} />
@@ -19,4 +21,8 @@ function App() {
   );
 }
 
+
 export default App;
+
+
+

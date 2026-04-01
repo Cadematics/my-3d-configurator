@@ -4,8 +4,9 @@ import { useGLTF } from '@react-three/drei';
 import useModelStore from '../store/useModelStore';
 
 function ModelViewer() {
-  const { selectedModel } = useModelStore();
-  const { scene } = useGLTF(`/products/${selectedModel}`);
+  const { selectedModel, uploadedModelUrl } = useModelStore();
+  const modelPath = uploadedModelUrl ? uploadedModelUrl : `/products/${selectedModel}`;
+  const { scene } = useGLTF(modelPath);
 
   return <primitive object={scene} />;
 }

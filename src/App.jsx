@@ -4,12 +4,14 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Environment } from '@react-three/drei';
 import ModelViewerWithSuspense from './components/ModelViewer';
 import ModelSelector from './components/ModelSelector';
+import ModelUploader from './components/ModelUploader';
 
 function App() {
   return (
     <>
-      <div className="ui-overlay">
+      <div className="ui-overlay" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <ModelSelector />
+        <ModelUploader />
       </div>
       <Canvas camera={{ position: [0, 2, 5], fov: 50 }} shadows>
         {/* Lighting */}
@@ -32,7 +34,6 @@ function App() {
         <Environment
           files="/envmaps/room1.hdr"
           background={false}
-          ground={{ height: 2, radius: 20, scale: 100 }}
         />
       </Canvas>
     </>

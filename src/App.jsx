@@ -5,6 +5,7 @@ import { OrbitControls, Environment } from '@react-three/drei';
 import ModelViewerWithSuspense from './components/ModelViewer';
 import ModelSelector from './components/ModelSelector';
 import ModelUploader from './components/ModelUploader';
+import MaterialConfigurator from './components/MaterialConfigurator';
 
 function App() {
   return (
@@ -12,6 +13,9 @@ function App() {
       <div className="ui-overlay" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <ModelSelector />
         <ModelUploader />
+      </div>
+      <div className="ui-overlay-right">
+        <MaterialConfigurator />
       </div>
       <Canvas camera={{ position: [0, 2, 5], fov: 50 }} shadows>
         {/* Lighting */}
